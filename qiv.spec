@@ -11,6 +11,7 @@ Patch0:		qiv-2.0-dither.patch
 Patch2:		qiv-wmclass_fix.patch
 License:	GPL
 Url:    	http://www.klografx.net/qiv/index2.html
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	libgtk+-devel libgdkimlib-devel libxinerama-devel
 Group:		Graphics
 
