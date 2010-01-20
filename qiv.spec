@@ -3,11 +3,10 @@ Version:	2.2.3
 Release:	%mkrel 1
 Summary:	Gdk/imlib image viewer
 Source0:	http://spiegl.de/qiv/download/%{name}-%{version}.tgz
-License:	GPL
+License:	GPL+
 Url:    	http://spiegl.de/qiv/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	gtk+2-devel
-BuildRequires:	libexif-devel
+BuildRequires:	gtk+2-devel >= 2.12
 BuildRequires:	libimlib2-devel
 BuildRequires:	libmagic-devel
 BuildRequires:	libxinerama-devel
