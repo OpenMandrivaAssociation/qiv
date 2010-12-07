@@ -1,6 +1,6 @@
 Name:		qiv
 Version:	2.2.3
-Release:	%mkrel 1
+Release:	%mkrel 2
 Summary:	Gdk/imlib image viewer
 Source0:	http://spiegl.de/qiv/download/%{name}-%{version}.tgz
 License:	GPL+
