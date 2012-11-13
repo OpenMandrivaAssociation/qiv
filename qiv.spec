@@ -18,7 +18,7 @@ qiv is a fast image viewer for X based on gdk and imlib.
 %setup -q
 
 %build
-%make CFLAGS="{optflags}"
+%make CFLAGS="%{optflags}"
 
 %install
 mkdir -p %{buildroot}%{_bindir}
