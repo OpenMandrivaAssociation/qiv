@@ -6,6 +6,7 @@ Group:		Graphics
 License:	GPL+
 Url:		http://spiegl.de/qiv/
 Source0:	http://spiegl.de/qiv/download/%{name}-%{version}.tgz
+Patch0:		qiv-2.2.4-no-strip.patch
 BuildRequires:	magic-devel
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(imlib2)
@@ -16,6 +17,7 @@ qiv is a fast image viewer for X based on gdk and imlib.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %make CFLAGS="%{optflags}"

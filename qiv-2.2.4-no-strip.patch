@@ -1,0 +1,12 @@
+diff -urN qiv-2.2.4/Makefile qiv-2.2.4-patched/Makefile
+--- qiv-2.2.4/Makefile	2011-05-14 00:11:24.000000000 +1100
++++ qiv-2.2.4-patched/Makefile	2012-11-13 20:11:07.413741376 +1100
+@@ -131,7 +131,7 @@
+ 	  install -d -m 0755 $(PREFIX)/bin; \
+ 	  echo install -d -m 0755 $(PREFIX)/bin; \
+         fi
+-	install -s -m 0755 $(PROGRAM) $(PREFIX)/bin
++	install -m 0755 $(PROGRAM) $(PREFIX)/bin
+ 	@if [ ! -e $(PREFIX)/man/man1 ]; then \
+ 	  echo install -d -m 0755 $(PREFIX)/man/man1; \
+ 	  install -d -m 0755 $(PREFIX)/man/man1; \
