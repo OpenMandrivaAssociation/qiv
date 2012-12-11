@@ -1,44 +1,40 @@
 Name:		qiv
 Version:	2.2.4
-Release:	%mkrel 1
+Release:	2
 Summary:	Gdk/imlib image viewer
-Source0:	http://spiegl.de/qiv/download/%{name}-%{version}.tgz
-License:	GPL+
-Url:    	http://spiegl.de/qiv/
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	gtk+2-devel >= 2.12
-BuildRequires:	libimlib2-devel
-BuildRequires:	libmagic-devel
-BuildRequires:	libxinerama-devel
 Group:		Graphics
+License:	GPL+
+Url:		http://spiegl.de/qiv/
+Source0:	http://spiegl.de/qiv/download/%{name}-%{version}.tgz
+Patch0:		qiv-2.2.4-no-strip.patch
+BuildRequires:	magic-devel
+BuildRequires:	pkgconfig(gtk+-2.0)
+BuildRequires:	pkgconfig(imlib2)
+BuildRequires:	pkgconfig(xinerama)
 
 %description
 qiv is a fast image viewer for X based on gdk and imlib.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
+%patch0 -p1
 
 %build
-%make CFLAGS="$RPM_OPT_FLAGS"
+%make CFLAGS="%{optflags}"
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{_bindir}
+mkdir -p %{buildroot}%{_bindir}
 
 #don't change this to %_mandir, since Makefile is not BM
 
-mkdir -p $RPM_BUILD_ROOT/{%{_bindir},%{_mandir}/man1}
+mkdir -p %{buildroot}{%{_bindir},%{_mandir}/man1}
 perl -pi -e 's!PREFIX\)/man/man1!PREFIX\)/share/man/man1!g' Makefile
-DISPLAY="" make PREFIX=$RPM_BUILD_ROOT%{_prefix} install
-cp qiv-command.example %buildroot%_bindir/qiv-command
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+DISPLAY="" make PREFIX=%{buildroot}%{_prefix} install
+cp qiv-command.example %{buildroot}%{_bindir}/qiv-command
 
 %files
-%defattr(-,root,root)
 %doc README Changelog README.COPYING README.INSTALL
 %{_bindir}/qiv
 %{_bindir}/qiv-command
 %{_mandir}/man1/qiv.1*
-
 
