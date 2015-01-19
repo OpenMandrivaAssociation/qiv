@@ -1,6 +1,6 @@
 Name:		qiv
-Version:	2.2.4
-Release:	3
+Version:	2.3.1
+Release:	1
 Summary:	Gdk/imlib image viewer
 Group:		Graphics
 License:	GPL+
@@ -37,4 +37,3 @@ cp qiv-command.example %{buildroot}%{_bindir}/qiv-command
 %{_bindir}/qiv
 %{_bindir}/qiv-command
 %{_mandir}/man1/qiv.1*
-
