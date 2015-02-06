@@ -1,6 +1,6 @@
 Name:		qiv
 Version:	2.2.4
-Release:	2
+Release:	3
 Summary:	Gdk/imlib image viewer
 Group:		Graphics
 License:	GPL+
