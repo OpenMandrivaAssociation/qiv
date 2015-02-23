@@ -1,6 +1,6 @@
 Name:		qiv
-Version:	2.2.4
-Release:	3
+Version:	2.3.1
+Release:	1
 Summary:	Gdk/imlib image viewer
 Group:		Graphics
 License:	GPL+
@@ -10,6 +10,8 @@ Patch0:		qiv-2.2.4-no-strip.patch
 BuildRequires:	magic-devel
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(imlib2)
+BuildRequires:	pkgconfig(lcms2)
+BuildRequires:	pkgconfig(libexif)
 BuildRequires:	pkgconfig(xinerama)
 
 %description
@@ -30,11 +32,12 @@ mkdir -p %{buildroot}%{_bindir}
 mkdir -p %{buildroot}{%{_bindir},%{_mandir}/man1}
 perl -pi -e 's!PREFIX\)/man/man1!PREFIX\)/share/man/man1!g' Makefile
 DISPLAY="" make PREFIX=%{buildroot}%{_prefix} install
-cp qiv-command.example %{buildroot}%{_bindir}/qiv-command
+cp contrib/%{name}-command.example %{buildroot}%{_bindir}/%{name}-command
 
 %files
 %doc README Changelog README.COPYING README.INSTALL
 %{_bindir}/qiv
 %{_bindir}/qiv-command
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/pixmaps/%{name}.png
 %{_mandir}/man1/qiv.1*
-
