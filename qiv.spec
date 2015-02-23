@@ -7,6 +7,7 @@ License:	GPL+
 Url:		http://spiegl.de/qiv/
 Source0:	http://spiegl.de/qiv/download/%{name}-%{version}.tgz
 Patch0:		qiv-2.2.4-no-strip.patch
+BuildRequires:	jpeg-devel
 BuildRequires:	magic-devel
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(imlib2)
