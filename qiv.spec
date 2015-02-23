@@ -13,6 +13,7 @@ BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(imlib2)
 BuildRequires:	pkgconfig(lcms2)
 BuildRequires:	pkgconfig(libexif)
+BuildRequires:	pkgconfig(libtiff-4)
 BuildRequires:	pkgconfig(xinerama)
 
 %description
