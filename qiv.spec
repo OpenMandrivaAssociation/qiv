@@ -4,7 +4,7 @@ Release:	1
 Summary:	Gdk/imlib image viewer
 Group:		Graphics
 License:	GPL+
-Url:		http://spiegl.de/qiv/
+Url:		https://spiegl.de/qiv/
 Source0:	http://spiegl.de/qiv/download/%{name}-%{version}.tgz
 Patch0:		qiv-2.2.4-no-strip.patch
 BuildRequires:	jpeg-devel
